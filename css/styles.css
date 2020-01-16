@@ -1,5 +1,7 @@
 /* Styles for small screens (mobile-first) */
 
+/* General styles */
+
 * {
   box-sizing: border-box;
 }
@@ -11,9 +13,18 @@ html, body {
   color: #363541;
 }
 
-p {
-  color: #8a8a8a;;
+p,
+label {
+  color: #777777;;
+  font-size: 10pt;
 }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 
 header > h1 {
   background-color: #363541;
@@ -21,18 +32,31 @@ header > h1 {
   padding: 15px;
   margin-top: 0;
   text-align: center;
-  font-size: 15pt;
+  font-size: 14pt;
   text-transform: uppercase;
 }
 
 .wrapper {
   padding: 0 4% 0 4%;
   width: 100%;
+  max-width: 650px;
+  margin: 0 auto 200px auto;
 }
+
+
+/* Intro styles */
 
 .intro {
   border-bottom: 2px solid #363541;
   text-align: center;
+}
+
+.intro h3 {
+  margin-bottom: 0;
+}
+
+.intro p {
+  margin: 7px 0 30px 0;
 }
 
 .intro::after {
@@ -42,6 +66,27 @@ header > h1 {
   border-bottom: 4px solid #363541;
 }
 
+
+/* General form styles */
+
+.newsletter {
+  background-image: url("../images/paperplane.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 1px 1.8px #363541;
+}
+
+input,
+textarea {
+  transition: box-shadow .5s;
+}
+
 fieldset {
   width: 100%;
   border: none;
@@ -49,23 +94,27 @@ fieldset {
   padding: 0;
 }
 
+div.label-input {
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+
+/* Contact information section styles */
+
 fieldset.contact-information {
   padding-bottom: 3em;
   border-bottom: 2px solid #363541;
 }
 
-label {
-  display: block;
-  margin: 5px 0 5px 0;
-}
-
-input,
+.contact-information input,
 textarea,
 select {
   width: 100%;
   padding: 1em;
   border: none;
-  border-radius: 3%;
+  border-radius: 4px;
   background-color: #e7e7e7;
   resize: none;
 }
@@ -73,8 +122,107 @@ select {
 input::placeholder {
   text-align: right;
   font-style: italic;
+  color: #a5a5a5;
 }
 
-select > option[disabled] {
-  color: grey;
+input#zip {
+  width: 50%;
+}
+
+.contact-information
+.label-input {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.contact-information label {
+  margin: 8px 0;
+}
+
+
+/* Newsletter section styles */
+
+.newsletter .label-input {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.newsletter label {
+  margin-left: 5px;
+}
+
+.newsletter p,
+label[for="other-topics"] {
+  margin: 30px 0 14px 0;
+}
+
+label[for="other-topics"] {
+  display: inline-block;
+}
+
+button.sign-up {
+  width: 100%;
+  padding: 25px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: #36bfb1;
+  font-weight: 900;
+  font-size: 14pt;
+  font: inherit;
+}
+
+.copyright {
+  font-size: 10pt;
+  text-align: center;
+  font-style: italic;
+  margin-top: 30px;
+  color: #a5a5a5;
+}
+
+/* Styles for devices at least 768px wide */
+@media(min-width: 768px) {
+  .wrapper {
+    margin-bottom: 300px;
+  }
+
+  .into p {
+    margin-bottom: 45px;
+  }
+
+  .intro h3 {
+    font-size: 1.4em;
+    margin-top: 50px;
+  }
+
+  form label,
+  form p {
+    color: #363541;
+  }
+
+  .contact-information h3,
+  .newsletter h3 {
+    margin-top: 35px;
+  }
+
+  .contact-information
+  .label-input {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 18px;
+  }
+
+  .contact-information
+  .label-input
+  label {
+    min-width: 25%;
+  }
+
+  input#zip {
+    width: 25%;
+  }
+
+
 }

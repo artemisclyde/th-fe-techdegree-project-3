@@ -14,46 +14,81 @@
   <div class="wrapper">
     <main>
       <div class="intro">
-        <h2>Signup for our newsletter</h2>
+        <h3>Signup for our newsletter</h3>
         <p>Get the latest news on how your code is doing right in your inbox</p>
       </div>
       <form>
-        <h2>Contact information</h2>
         <fieldset class="contact-information">
-          <label for="">Full Name</label>
-          <input type="text" placeholder="Required">
-          <label for="">Email Address</label>
-          <input type="email" placeholder="Required">
-          <label for="">Phone Number</label>
-          <input type="telephone">
-          <label for="">Street Address</label>
-          <input type="text">
-          <label for="">City</label>
-          <input type="text">
-          <label for="">State</label>
-          <select name="" id="">
-            <option value="" disabled selected hidden>Choose State</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-          </select>
-          <label for="">Zip Code</label>
-          <input type="text">
+          <h3>Contact information</h3>
+          <div class="label-input">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="Required" required>
+          </div>
+          <div class="label-input">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="Required" required>
+          </div>
+          <div class="label-input">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="telephone" placeholder="E.g. +205-868-3999">
+          </div>
+          <div class="label-input">
+            <label for="street">Street Address</label>
+            <input id="street" name="street" type="text" placeholder="E.g. 401 19th St">
+          </div>
+          <div class="label-input">
+            <label for="city">City</label>
+            <input id="city" name="city" type="text" placeholder="E.g. Birmingham">
+          </div>
+          <div class="label-input">
+            <label for="state">State</label>
+            <select name="state" id="state">
+              <option value="" disabled selected hidden>Choose State</option>
+              <option value="'Kansas'">Kansas</option>
+              <option value="'Alabama'">Alabama</option>
+            </select>
+          </div>
+          <div class="label-input">
+            <label for="zip">Zip Code</label>
+            <input id="zip" name="zip" type="text" placeholder="E.g. 35233">
+          </div>
         </fieldset>
-        <h2>Newsletter</h2>
+
         <fieldset class="newsletter">
-          <label for="">Select the newsletters you would like to receive</label>
-          <input type="checkbox">
-          <input type="checkbox">
-          <input type="checkbox">
-          <label for="">Newsletter format</label>
-          <input type="radio">
-          <input type="radio">
-          <label for="">Other topics you'd like to hear about</label>
-          <textarea name="" id="" cols="30" rows="10" wrap=></textarea>
+          <h3>Newsletter</h3>
+
+          <p>Select the newsletters you would like to receive</p>
+          <div class="label-input">
+            <label for="html-news">HTML News</label>
+            <input name="newsletter" id="html-news" type="checkbox"><br>
+          </div>
+          <div class="label-input">
+            <label for="css-news">CSS News</label>
+            <input name="newsletter" id="css-news" type="checkbox"><br>
+          </div>
+          <div class="label-input">
+            <label for="js-news">Javascript News</label>
+            <input name="newsletter" id="js-news" type="checkbox">
+          </div>
+
+          <p>Newsletter format</p>
+          <div class="label-input">
+          <label for="html">HTML</label>
+          <input name="format" id="html" type="radio"><br>
+          </div>
+
+          <div class="label-input">
+            <label for="plain">Plain text</label>
+            <input name="format" id="plain" type="radio">
+          </div>
+          <label for="other-topics">Other topics you'd like to hear about</label>
+          <textarea name="other-topics" id="other-topics" cols="30" rows="5"
+                    placeholder="E.g. TypeScript, Angular, ..."></textarea>
         </fieldset>
-        <button type="submit">Sign Up</button>
-        <p>Copyright The Code Review</p>
-      </div>
+
+        <button type="submit" class="sign-up">Sign Up</button>
+        <p class="copyright">Copyright The Code Review</p>
+      </form>
 
 
     </main>
