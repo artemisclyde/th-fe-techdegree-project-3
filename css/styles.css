@@ -202,9 +202,11 @@ button.sign-up {
     color: #363541;
   }
 
-  .contact-information h3,
-  .newsletter h3 {
-    margin-top: 35px;
+  .contact-information legend,
+  .newsletter legend {
+    padding: 30px 0 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
   }
 
   .contact-information
